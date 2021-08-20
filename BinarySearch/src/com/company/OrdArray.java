@@ -67,7 +67,6 @@ public class OrdArray {
             return true;
         }
 
-
     }
 
     public void display ()                      //display the array
