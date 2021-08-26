@@ -19,7 +19,7 @@ public class ReverseApp {
             }
             Reverser theReverser = new Reverser(input);
             output = theReverser.doRev();
-            System.out.println("Reversed " + output);
+            System.out.println("Reversed: " + output);
         }
     }
 
