@@ -1,68 +1,74 @@
 public class LinkList {
     private Link first;
 
-    public LinkList()
-    {
+    public LinkList() {
         first = null;
     }
-    public void insertFirst(int id, double dd)
-    {
-        Link newLink = new Link(id,dd);
+
+    public void insertFirst(int id, double dd) {
+        Link newLink = new Link(id, dd);
         newLink.next = first;
         first = newLink;
     }
 
-    public Link find(int key)
-    {
+    public Link find(int key) {
         Link current = first;
-        while(current.iData != key)
-        {
-            if (current.next == null)
-            {
+        while (current.iData != key) {
+            if (current.next == null) {
                 return null;
-            }
-            else
-            {
+            } else {
                 current = current.next;
             }
         }
         return current;
     }
 
-    public Link delete(int key)
-    {
+    public Link delete(int key) {
         Link current = first;
         Link previous = first;
-        while (current.iData != key)
-        {
-            if (current.next ==null)
-            {
+        while (current.iData != key) {
+            if (current.next == null) {
                 return null;
-            }
-            else {
+            } else {
                 previous = current;
                 current = current.next;
             }
         }
-        if (current == first)
-        {
+        if (current == first) {
             first = first.next;
-        }
-        else
-        {
+        } else {
             previous.next = current.next;
 
         }
         return current;
     }
+
+    public Link deleteFirst() {
+        Link temp = first;
+        first = first.next;
+        return temp;
+    }
+
     public void displayList() {
         System.out.print("List (first-->last): ");
         Link current = first;
-        while(current != null)
-        {
+        while (current != null) {
             current.displayLink();
             current = current.next;
         }
         System.out.println("");
+    }
+
+    public void displayListStack() {
+        Link current = first;
+        while (current != null) {
+            current.displayLink();
+            current = current.next;
+        }
+        System.out.println("");
+    }
+
+    public boolean isEmpty() {
+        return first == null;
     }
 }
