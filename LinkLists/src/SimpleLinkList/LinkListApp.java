@@ -1,3 +1,5 @@
+package SimpleLinkList;
+
 public class LinkListApp {
     public static void main(String[] args)
     {

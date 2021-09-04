@@ -1,3 +1,8 @@
+package LinkStack;
+
+import SimpleLinkList.Link;
+import SimpleLinkList.LinkList;
+
 // A Stack implemented by a Linked List
 public class LinkStack {
     private LinkList theList;

@@ -1,3 +1,7 @@
+package DoubleEndedList;
+
+import SimpleLinkList.Link;
+
 // Double-Ended Lists allows you to insert a new link directly at the end of the list
 // !!Notice : Don't confuse the double-ended list with doubly linked list/.
 public class FirstLastList {

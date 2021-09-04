@@ -1,3 +1,5 @@
+package SimpleLinkList;
+
 public class Link {
     public int iData;           // data item (key)
     public double dData;        // data item

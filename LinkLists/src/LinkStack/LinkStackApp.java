@@ -1,3 +1,5 @@
+package LinkStack;
+
 public class LinkStackApp {
     public static void main(String[] args) {
         LinkStack theStack = new LinkStack();

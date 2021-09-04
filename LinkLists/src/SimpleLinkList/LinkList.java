@@ -1,3 +1,5 @@
+package SimpleLinkList;
+
 public class LinkList {
     private Link first;
 

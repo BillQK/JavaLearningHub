@@ -1,3 +1,7 @@
+package SortedLinkList;
+
+import SimpleLinkList.Link;
+
 public class SortLinkList {
     private Link first;
 
@@ -13,6 +17,11 @@ public class SortLinkList {
         }
     }
 
+    public boolean isEmpty() {
+        return first == null;
+    }
+
+    // Insert: Take in a Link --> Insert it into list
     private void insert(Link link) {
         Link previous = null;
         Link current = first;
@@ -30,9 +39,6 @@ public class SortLinkList {
         link.next = current;
     }
 
-    public boolean isEmpty() {
-        return first == null;
-    }
 
     public void insert(int id, double dd) {
         Link newLink = new Link(id, dd);

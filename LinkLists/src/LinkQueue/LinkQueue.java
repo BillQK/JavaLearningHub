@@ -1,3 +1,8 @@
+package LinkQueue;
+
+import DoubleEndedList.FirstLastList;
+import SimpleLinkList.Link;
+
 public class LinkQueue {
     private FirstLastList theList;
 

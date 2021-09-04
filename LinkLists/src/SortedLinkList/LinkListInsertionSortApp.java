@@ -1,3 +1,10 @@
+package SortedLinkList;
+
+import SimpleLinkList.Link;
+
+// A new constructor for SortList takes an array of Link objects as an argument
+// and inserts the entire contents of the array to a newly created list.
+// While doing so it's sorted by id
 public class LinkListInsertionSortApp {
     public static void main(String[] args) {
         int size = 10;
