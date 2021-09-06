@@ -65,10 +65,11 @@ public class DoublyLinkedList {
         LinkD current = first;
         while (current.iData != key) {
             current = current.next;
+            if (current == null) {
+                return false;
+            }
         }
-        if (current == null) {
-            return false;
-        }
+
         LinkD newLink = new LinkD(id);
 
         if (current == last) {
