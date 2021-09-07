@@ -1,10 +1,10 @@
-package CircularList;
+package JosephusProblem;
 
-public class CircularListApp {
+import CircularList.CircularList;
 
+public class Josephus {
     public static void main(String[] args) {
         CircularList theList = new CircularList();
-
 
         theList.insert(1);
         theList.insert(2);
@@ -15,10 +15,14 @@ public class CircularListApp {
         theList.insert(7);
 
         theList.find(1);
+
+        while (theList.size() != 1) {
+            theList.move(3);
+            theList.deleteCurrent();
+
+        }
+        System.out.println();
         theList.displayList();
 
-        theList.deleteCurrent();
-        theList.deleteCurrent();
-        theList.displayList();
     }
 }

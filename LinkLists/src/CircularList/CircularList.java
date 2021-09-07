@@ -27,7 +27,7 @@ public class CircularList {
         }
     }
 
-    public Link deleteCurrent() {
+    public void deleteCurrent() {
         Link l = current;
 
         if (l.next == current) {
@@ -37,11 +37,22 @@ public class CircularList {
             while (l.next != current) {
                 l = l.next;
             }
+            System.out.print(l.next.iData + " ");
             l.next = current.next;
-            current = l;
+            current = l.next;
             nElems--;
         }
-        return l;
+    }
+
+    public int size() {
+        return nElems;
+    }
+
+    public void move(int step) {
+        while (step != 0) {
+            moveNext();
+            step--;
+        }
     }
 
     public void moveNext() {
@@ -59,7 +70,7 @@ public class CircularList {
                 counter++;
             }
         }
-        if (counter == nElems){
+        if (counter == nElems) {
             System.out.println("Not Found " + key);
         }
     }
@@ -67,15 +78,14 @@ public class CircularList {
     public void displayList() {
         System.out.println("List (First --> Last): ");
         int counter = 0;
-       while (counter != nElems) {
-           if (current != null) {
-               current.displayLink();
-               current = current.next;
-               counter++;
-           }
-           else {
-               System.out.println();
-           }
-       }
+        while (counter != nElems) {
+            if (current != null) {
+                current.displayLink();
+                current = current.next;
+                counter++;
+            } else {
+                System.out.println();
+            }
+        }
     }
 }
