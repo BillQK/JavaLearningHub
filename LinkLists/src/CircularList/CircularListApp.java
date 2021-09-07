@@ -10,9 +10,12 @@ public class CircularListApp {
         theList.insert(3);
         theList.insert(4);
 
-        theList.find(3);
+        theList.moveNext();
+        theList.insert(5);
 
         theList.displayList();
+
+        theList.find(3);
 
         theList.deleteCurrent();
         theList.deleteCurrent();

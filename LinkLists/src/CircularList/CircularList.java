@@ -53,13 +53,15 @@ public class CircularList {
         while (counter != nElems) {
             if (key == current.iData) {
                 System.out.println("Found " + key);
-                counter++;
+                break;
             } else {
                 current = current.next;
                 counter++;
             }
         }
-        System.out.println("Not Found " + key);
+        if (counter == nElems){
+            System.out.println("Not Found " + key);
+        }
     }
 
     public void displayList() {
