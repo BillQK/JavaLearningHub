@@ -21,8 +21,13 @@ public class HashTable {
         }
         System.out.println("");
     }
-    public int hashFunc(int key){
+    public int hashFunc1(int key){
         return key % arraySize;
+    }
+    public int hashFunc2(int key) {
+        //non-zero, less than array size, different from hF1
+        // array size must be relatively prime to 5,4,3, and 2
+        return 5 - (key % 5);
     }
 
     public void insert(DataItem item) {
@@ -30,11 +35,12 @@ public class HashTable {
             return;
         }
         int key = item.getKey();
-        int hashVal = hashFunc(key);
+        int hashVal = hashFunc1(key);
+        int stepSize = hashFunc2(key);
 
         while(hashArray[hashVal] != null
                 && hashArray[hashVal].getKey() != -1){
-            ++hashVal;
+            hashVal+= stepSize;
             hashVal %= arraySize;
         }
         hashArray[hashVal] = item;
@@ -44,27 +50,29 @@ public class HashTable {
         if (arraySize == 0) {
             return null;
         }
-        int hashValue = hashFunc(key);
+        int hashValue = hashFunc1(key);
+        int stepSize = hashFunc2(key);
         while (hashArray[hashValue] != null) {
             if(hashArray[hashValue].getKey() == key){
                 DataItem item = hashArray[hashValue];
                 hashArray[hashValue] = nonItem;
                 return item;
             }
-            ++hashValue;
+            hashValue += stepSize;
             hashValue %= arraySize;
         }
         return null;
     }
 
     public DataItem find(int key) {
-        int hashVal = hashFunc(key);
+        int hashVal = hashFunc1(key);
+        int stepSize = hashFunc2(key);
 
         while(hashArray[hashVal] != null) {
             if (hashArray[hashVal].getKey() == key) {
                 return hashArray[hashVal];
             }
-            ++hashVal;
+            hashVal += stepSize;
             hashVal %= arraySize;
         }
         return null;
